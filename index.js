@@ -21,6 +21,27 @@ const finalCont = document.getElementById("final-container");
 //   jcb: /^(?:2131|1800|35[0-9]{3})[0-9]{11}$/
 // };
 
+const ratingStars = [...document.getElementsByClassName("rating__star")];
+
+function executeRating(stars) {
+  const starClassActive = "rating__star fas fa-star";
+  const starClassInactive = "rating__star far fa-star";
+  const starsLength = stars.length;
+  let i;
+  stars.map((star) => {
+    star.onclick = () => {
+      i = stars.indexOf(star);
+
+      if (star.className === starClassInactive) {
+        for (i; i >= 0; --i) stars[i].className = starClassActive;
+      } else {
+        for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+      }
+    };
+  });
+}
+executeRating(ratingStars);
+
 const menuHtml = menuArray.map(function (foodItem) {
   return `<section>
             <div class="food-item">
@@ -78,7 +99,16 @@ cardForm.addEventListener("submit", function (e) {
   ).classList;
   classlistCheckoutContainer.toggle("hidden");
 
-  thanksDiv.innerHTML = `<p>Thanks, ${name}! Your order is on its way!</p>`;
+  thanksDiv.innerHTML = `
+                            <p>Thanks, ${name}! Your order is on its way!</p>
+                            <div class="rating">
+                                <i class="rating__star far fa-star"></i>
+                                <i class="rating__star far fa-star"></i>
+                                <i class="rating__star far fa-star"></i>
+                                <i class="rating__star far fa-star"></i>
+                                <i class="rating__star far fa-star"></i>
+                            </div>
+                            `;
   thanksDiv.classList.toggle("hidden");
 });
 
