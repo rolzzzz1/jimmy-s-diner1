@@ -331,7 +331,8 @@ form {
   color: #065f46;
   border: none;
   border-radius: 3px;
-  height: 120px;
+  /* height: 120px; */
+  height: 200px;
   font-size: 32px;
   text-align: center;
   /* margin: 20px auto; */
