@@ -327,6 +327,10 @@ form {
 }
 
 .thanks-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #ecfdf5;
   color: #065f46;
   border: none;
@@ -334,38 +338,57 @@ form {
   /* height: 120px; */
   height: 200px;
   font-size: 32px;
-  text-align: center;
+  /* text-align: center; */
   /* margin: 20px auto; */
   margin: 30px 30px;
   padding: 0;
+  justify-content: center;
 }
 
 .thanks-div p {
-  margin: auto 0;
-  padding: 40px 0;
+  margin: 0 0;
+  padding: 10px 0;
 }
 
-.rating {
-  position: relative;
-  width: 180px;
-  background: transparent;
+.card {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.3em;
-  padding: 5px;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 0 2px #b3acac;
+  background: none;
+  margin: 0;
+  padding: 0;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+  width: 60%;
+  height: 40%;
+  /* border-radius: 0.5rem; */
 }
 
-.rating__star {
-  font-size: 1.3em;
+.star {
+  font-size: 40px;
   cursor: pointer;
-  color: #dabd18b2;
-  transition: filter linear 0.3s;
 }
 
-.rating__star:hover {
-  filter: drop-shadow(1px 1px 4px gold);
+.star:hover {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.one {
+  color: rgb(255, 0, 0);
+}
+
+.two {
+  color: rgb(255, 106, 0);
+}
+
+.three {
+  color: rgb(251, 255, 120);
+}
+
+.four {
+  color: rgb(255, 255, 0);
+}
+
+.five {
+  color: rgb(24, 159, 14);
 }

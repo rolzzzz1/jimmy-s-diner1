@@ -21,26 +21,34 @@ const finalCont = document.getElementById("final-container");
 //   jcb: /^(?:2131|1800|35[0-9]{3})[0-9]{11}$/
 // };
 
-const ratingStars = [...document.getElementsByClassName("rating__star")];
+// To access the stars
+let stars = document.getElementsByClassName("star");
+// let output =
+//     document.getElementById("output");
 
-function executeRating(stars) {
-  const starClassActive = "rating__star fas fa-star";
-  const starClassInactive = "rating__star far fa-star";
-  const starsLength = stars.length;
-  let i;
-  stars.map((star) => {
-    star.onclick = () => {
-      i = stars.indexOf(star);
-
-      if (star.className === starClassInactive) {
-        for (i; i >= 0; --i) stars[i].className = starClassActive;
-      } else {
-        for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
-      }
-    };
-  });
+// Funtion to update rating
+function gfg(n) {
+  remove();
+  for (let i = 0; i < n; i++) {
+    if (n == 1) cls = "one";
+    else if (n == 2) cls = "two";
+    else if (n == 3) cls = "three";
+    else if (n == 4) cls = "four";
+    else if (n == 5) cls = "five";
+    stars[i].className = "star " + cls;
+  }
+  // output.innerText = "Rating is: " + n + "/5";
+  console.log("Rating - " + n);
 }
-executeRating(ratingStars);
+
+// To remove the pre-applied styling
+function remove() {
+  let i = 0;
+  while (i < 5) {
+    stars[i].className = "star";
+    i++;
+  }
+}
 
 const menuHtml = menuArray.map(function (foodItem) {
   return `<section>
