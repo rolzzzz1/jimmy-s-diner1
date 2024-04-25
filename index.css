@@ -367,6 +367,8 @@ form {
   font-size: 40px;
   cursor: pointer;
   color: #666;
+  margin: 0;
+  padding: 0;
 }
 
 .star:hover {
