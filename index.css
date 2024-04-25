@@ -342,6 +342,7 @@ form {
   /* margin: 20px auto; */
   margin: 30px 30px;
   padding: 0;
+  max-width: 200px;
 }
 
 .thanks-div p {
