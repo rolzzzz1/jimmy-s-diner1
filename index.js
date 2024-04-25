@@ -23,6 +23,7 @@ const finalCont = document.getElementById("final-container");
 
 // To access the stars
 let stars = document.getElementsByClassName("star");
+let cls = "";
 // let output =
 //     document.getElementById("output");
 
@@ -38,7 +39,7 @@ function gfg(n) {
     stars[i].className = "star " + cls;
   }
   // output.innerText = "Rating is: " + n + "/5";
-  console.log("Rating - " + n);
+  console.log("Rating - " + n + ". Thank you for your feedback.");
 }
 
 // To remove the pre-applied styling
@@ -83,6 +84,24 @@ document.addEventListener("click", function (e) {
   } else if (e.target.dataset.remove) {
     handleRemoveClick(e.target.dataset.remove);
   }
+  console.log(e.target.id);
+  switch (e.target.id) {
+    case "star1":
+      gfg(1);
+      break;
+    case "star2":
+      gfg(2);
+      break;
+    case "star3":
+      gfg(3);
+      break;
+    case "star4":
+      gfg(4);
+      break;
+    case "star5":
+      gfg(5);
+      break;
+  }
 });
 
 completeBtn.addEventListener("click", function () {
@@ -109,13 +128,25 @@ cardForm.addEventListener("submit", function (e) {
 
   thanksDiv.innerHTML = `
                             <p>Thanks, ${name}! Your order is on its way!</p>
-                            <div class="rating">
-                                <i class="rating__star far fa-star"></i>
-                                <i class="rating__star far fa-star"></i>
-                                <i class="rating__star far fa-star"></i>
-                                <i class="rating__star far fa-star"></i>
-                                <i class="rating__star far fa-star"></i>
-                            </div>
+                                <div class="card">
+                                    <br />
+                                    <span id="star1"
+                                        class="star">★
+                                    </span>
+                                    <span id="star2"
+                                        class="star">★
+                                    </span>
+                                    <span id="star3"
+                                        class="star">★
+                                    </span>
+                                    <span id="star4"
+                                        class="star">★
+                                    </span>
+                                    <span id="star5"
+                                        class="star">★
+                                    </span>
+                                </div>
+                                <p><small>Please rate your feedback!<small></p>
                             `;
   thanksDiv.classList.toggle("hidden");
 });
