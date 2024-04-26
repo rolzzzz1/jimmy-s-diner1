@@ -11,35 +11,34 @@ const cardForm = document.getElementById("card-form");
 const thanksDiv = document.getElementById("thanks-div");
 const discountCont = document.getElementById("discount-container");
 const finalCont = document.getElementById("final-container");
+let msg = "";
 
-// var acceptedCreditCards = {
-//   visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
-//   mastercard: /^5[1-5][0-9]{14}$|^2(?:2(?:2[1-9]|[3-9][0-9])|[3-6][0-9][0-9]|7(?:[01][0-9]|20))[0-9]{12}$/,
-//   amex: /^3[47][0-9]{13}$/,
-//   discover: /^65[4-9][0-9]{13}|64[4-9][0-9]{13}|6011[0-9]{12}|(622(?:12[6-9]|1[3-9][0-9]|[2-8][0-9][0-9]|9[01][0-9]|92[0-5])[0-9]{10})$/,
-//   diners_club: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/,
-//   jcb: /^(?:2131|1800|35[0-9]{3})[0-9]{11}$/
-// };
+// FEEDBACK RATING
 
 // To access the stars
 let stars = document.getElementsByClassName("star");
-let cls = "";
-// let output =
-//     document.getElementById("output");
+let starclass = "";
 
 // Funtion to update rating
-function gfg(n) {
+function claculateRating(n) {
   remove();
   for (let i = 0; i < n; i++) {
-    if (n == 1) cls = "one";
-    else if (n == 2) cls = "two";
-    else if (n == 3) cls = "three";
-    else if (n == 4) cls = "four";
-    else if (n == 5) cls = "five";
-    stars[i].className = "star " + cls;
+    if (n == 1) {
+      starclass = "one";
+    } else if (n == 2) {
+      starclass = "two";
+    } else if (n == 3) {
+      starclass = "three";
+    } else if (n == 4) {
+      starclass = "four";
+    } else if (n == 5) {
+      starclass = "five";
+    }
+    stars[i].className = "star " + starclass;
   }
-  // output.innerText = "Rating is: " + n + "/5";
-  console.log("Rating - " + n + ". Thank you for your feedback.");
+
+  msg.innerHTML = `<small>Thank you for your feedback.</small>`;
+  // console.log('Rating - '+n+ '. Thank you for your feedback.')
 }
 
 // To remove the pre-applied styling
@@ -51,10 +50,10 @@ function remove() {
   }
 }
 
+// creating and showing menu html
 const menuHtml = menuArray.map(function (foodItem) {
   return `<section>
             <div class="food-item">
-                <div class="food-item-inner">
                     <div class="food-item-info">
                         <div class="food-item-img">
                             <p>${foodItem.emoji}</p>
@@ -67,49 +66,46 @@ const menuHtml = menuArray.map(function (foodItem) {
                             <p class="size20">$${foodItem.price}</p>
                         </div>
                     </div>
-                    <div class="addBtnDiv">
+                    <div>
                         <button class="addBtn inter-extra-light" data-add="${
                           foodItem.id
                         }">+</button>
                     </div>
-                </div>
             </div>
         </section>
 `;
 });
 
+// event listener for add, remove, complete, star buttons
 document.addEventListener("click", function (e) {
   if (e.target.dataset.add) {
     handleAddClick(e.target.dataset.add);
   } else if (e.target.dataset.remove) {
     handleRemoveClick(e.target.dataset.remove);
+  } else if (e.target.id === "completeBtn") {
+    modal.classList.toggle("hidden");
   }
-  console.log(e.target.id);
+
   switch (e.target.id) {
     case "star1":
-      gfg(1);
+      claculateRating(1);
       break;
     case "star2":
-      gfg(2);
+      claculateRating(2);
       break;
     case "star3":
-      gfg(3);
+      claculateRating(3);
       break;
     case "star4":
-      gfg(4);
+      claculateRating(4);
       break;
     case "star5":
-      gfg(5);
+      claculateRating(5);
       break;
   }
 });
 
-completeBtn.addEventListener("click", function () {
-  console.log("complete order clicked");
-  console.log(modal.classList);
-  modal.classList.toggle("hidden");
-});
-
+// form event listener
 cardForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const cardFormData = new FormData(cardForm);
@@ -117,7 +113,6 @@ cardForm.addEventListener("submit", function (e) {
   const name = cardFormData.get("customerName");
   const cardNo = cardFormData.get("customerCardNumber");
   const cardCvv = cardFormData.get("customerCVV");
-  console.log(name, cardNo, cardCvv);
 
   modal.classList.toggle("hidden");
 
@@ -146,11 +141,13 @@ cardForm.addEventListener("submit", function (e) {
                                         class="star">★
                                     </span>
                                 </div>
-                                <p><small>Please rate your feedback!<small></p>
-                            `;
+                                <p id="msg"><small>Please rate your feedback!<small></p>
+                  `;
+  msg = document.getElementById("msg");
   thanksDiv.classList.toggle("hidden");
 });
 
+// creating order html
 function getOrderHtml() {
   let orderHtml = "";
   orderArray.forEach(function (order, index) {
@@ -170,14 +167,17 @@ function getOrderHtml() {
   return orderHtml;
 }
 
+// Removing food item
 function handleRemoveClick(foodItemId) {
   // Setting show total price
   let totalPrice = Number(showTotalPrice.innerHTML);
 
+  // getting object using index of orderarray
   const targetFoodItemObj = orderArray.filter(function (foodItem, index) {
     return index === Number(foodItemId);
   })[0];
 
+  // removing this specific object from orderarray
   const modifiedFoodItemObj = orderArray.filter(
     (foodItem, i) => i !== Number(foodItemId)
   );
@@ -191,7 +191,6 @@ function handleRemoveClick(foodItemId) {
   // Checking for discount
   let discount = checkDealDiscount();
   if (discount !== 0) {
-    console.log(discount);
     showDiscountPrice.innerText = discount;
     showFinalPrice.innerText = totalPrice - discount;
   } else {
@@ -212,23 +211,27 @@ function handleRemoveClick(foodItemId) {
   }
 }
 
+// Adding food item
 function handleAddClick(foodItemId) {
+  // getting food object from data using food item id
   const targetFoodItemObj = menuArray.filter(function (foodItem) {
     return foodItem.id === Number(foodItemId);
   })[0];
 
   orderArray.push(targetFoodItemObj);
 
+  // creating and showing order html
   checkoutItems.innerHTML = getOrderHtml();
 
   let totalPrice = Number(showTotalPrice.innerHTML);
   totalPrice += targetFoodItemObj.price;
   showTotalPrice.innerText = totalPrice;
 
-  //Discout
+  //Discount
   let discount = checkDealDiscount();
+
+  // Applying discount
   if (discount !== 0) {
-    console.log(discount);
     showDiscountPrice.innerText = discount;
     showFinalPrice.innerText = totalPrice - discount;
 
@@ -241,7 +244,7 @@ function handleAddClick(foodItemId) {
     showFinalPrice.innerText = totalPrice;
   }
 
-  // adding/removing hidden class
+  // adding/removing hidden class (For showing and hiding container divs)
   const classlistCheckoutContainer = document.getElementById(
     `order-checkout-container`
   ).classList;
@@ -250,6 +253,7 @@ function handleAddClick(foodItemId) {
   }
 }
 
+// Checking if customer eligible for mealdeal discount
 function checkDealDiscount() {
   let pizzaCount = 0;
   let burgerCount = 0;
@@ -266,51 +270,12 @@ function checkDealDiscount() {
     }
   });
 
-  console.log("Pizza count - " + pizzaCount);
-  console.log("Burger count - " + burgerCount);
-  console.log("Beer count - " + beerCount);
-
   if (pizzaCount && burgerCount && beerCount) {
     let count = Math.min(pizzaCount, Math.min(burgerCount, beerCount));
     discount = count * 2;
   }
 
-  if (discount !== 0) {
-    return discount;
-  } else {
-    return 0;
-  }
+  return discount;
 }
-
-// function validateCard(value) {
-//   // remove all non digit characters
-//   var value = value.replace(/\D/g, '');
-//   var sum = 0;
-//   var shouldDouble = false;
-//   // loop through values starting at the rightmost side
-//   for (var i = value.length - 1; i >= 0; i--) {
-//     var digit = parseInt(value.charAt(i));
-
-//     if (shouldDouble) {
-//       if ((digit *= 2) > 9) digit -= 9;
-//     }
-
-//     sum += digit;
-//     shouldDouble = !shouldDouble;
-//   }
-
-//   var valid = (sum % 10) == 0;
-//   var accepted = false;
-
-//   // loop through the keys (visa, mastercard, amex, etc.)
-//   Object.keys(acceptedCreditCards).forEach(function(key) {
-//     var regex = acceptedCreditCards[key];
-//     if (regex.test(value)) {
-//       accepted = true;
-//     }
-//   });
-
-//   return valid && accepted;
-// }
 
 document.getElementById("inner-container").innerHTML = menuHtml.join("");

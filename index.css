@@ -2,11 +2,6 @@ body {
   margin: 0;
 }
 
-.container {
-  width: 600px;
-  margin: 0 auto;
-}
-
 .smythe-regular {
   font-family: "Smythe", system-ui;
   font-weight: 400;
@@ -20,6 +15,17 @@ body {
   font-style: normal;
   font-variation-settings: "slnt" 0;
 }
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#inner-container {
+  margin-top: 30px;
+}
+
+/* HEADER CSS */
 
 header {
   background-image: url("./images/header-bg-img.png");
@@ -41,19 +47,30 @@ header {
   padding: 0 0 0 40px;
 }
 
-/* .food-item {
-} */
+/* MENU CSS */
 
-#inner-container {
-  margin-top: 30px;
-}
-
-.food-item-inner {
+.food-item {
   display: flex;
   justify-content: space-between;
   margin: 10px 30px;
   padding: 10px 0px;
   border-bottom: 1px #d2d2d2 solid;
+}
+
+.food-item-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.food-item-text {
+  padding: 0 auto;
+}
+
+.food-item-text p,
+h1,
+h3 {
+  margin: 0;
+  padding: 0 0 5px 0;
 }
 
 .food-item-img {
@@ -72,22 +89,6 @@ header {
   padding: 0;
 }
 
-.food-item-info {
-  display: flex;
-  justify-content: space-around;
-}
-
-.food-item-info p,
-h1,
-h3 {
-  margin: 0;
-  padding: 0 0 5px 0;
-}
-
-.food-item-text {
-  padding: 0 auto;
-}
-
 .addBtn {
   border: 1.5px #dedede solid;
   border-radius: 50%;
@@ -98,9 +99,15 @@ h3 {
   color: #3c3c3c;
 }
 
+/* ORDER CSS */
+
 .order-checkout-container {
   margin: 10px 30px;
   padding: 0;
+}
+
+.inner-checkout-container {
+  border-bottom: 2px solid #393333;
 }
 
 .checkout-item {
@@ -130,10 +137,6 @@ h3 {
   display: flex;
 }
 
-.inner-checkout-container {
-  border-bottom: 2px solid #393333;
-}
-
 .total-container,
 .discount-container,
 .final-container {
@@ -155,19 +158,7 @@ h3 {
   font-weight: bold;
 }
 
-.payBtn {
-  display: block;
-  width: 100%;
-  height: 60px;
-  background-color: #16db99;
-  border-radius: 3px;
-  border: none;
-  color: #fff;
-  margin: 20px 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-  font-size: 20px;
-}
+/* SINGLE CSS CLASSES */
 
 .size28 {
   font-size: 28px;
@@ -201,10 +192,9 @@ h3 {
   display: none;
 }
 
-/* modal */
+/* MODAL CSS */
 
 .modal {
-  /* display: block; */
   position: fixed;
   top: 0;
   bottom: 0;
@@ -215,7 +205,6 @@ h3 {
   width: 524px;
   border-radius: 5px;
   box-shadow: 0px 0px 6px 2px #666;
-  /* box-shadow: 16px 16px 16px 16px #666; */
   background-color: #ffffff;
   color: #000000;
   text-align: center;
@@ -227,92 +216,11 @@ h3 {
   padding: 0;
 }
 
-input {
-  height: 70px;
-  font-size: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border-radius: 4px;
-  border: 1.5px solid #757575;
-  color: #757575;
-  padding: 0 0 0 20px;
-  margin: 5px 0;
-}
-
 .modal-title {
   font-size: 24px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
 }
-
-/* .modal-inner-loading{
-    text-align: center;
-} */
-
-/* modal buttons */
-
-/* .close-modal-btn-container{
-    text-align: right;
-    margin: 9px;
-}
-
-.modal-close-btn {
-  font-size: 22px;
-  font-weight: bold;
-  background-color: transparent;
-  border: 1px solid transparent;
-  color: whitesmoke;
-}
-
-.modal-close-btn:hover,
-.modal-close-btn:active{
-    color: red;
-    cursor: pointer;
-}
-
-.modal-close-btn:disabled{
-    color: whitesmoke;
-    opacity: 0.2;
-    cursor: not-allowed;
-}
-
-.modal-choice-btns{
-    margin-top: 10px;
-    padding: 8px 16px;
-    display: flex;
-    justify-content: center;
-}
-
-.modal-btn{
-    padding: 10px 24px;
-    cursor: pointer;
-} */
-
-/* modal input */
-
-/* input{
-    margin-top: 10px; 
-    border: 1px solid #212529;
-    padding: 10px;
-    width: 100%;
-    border-radius: 3px;
-} */
-
-/* modal after submit */
-
-/* .loading{
-    width: 100%; 
-    margin-top: 10px;
-}
-
-.modal-display-name{
-    color: fuchsia;
-}
-
-.modal-text{
-    height: 140px;
-    line-height: 23px;
-    margin-bottom: 0;
-} */
 
 form {
   display: flex;
@@ -326,23 +234,42 @@ form {
   box-shadow: 1px 1px 30px 2px whitesmoke;
 }
 
+input {
+  height: 70px;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 4px;
+  border: 1.5px solid #757575;
+  color: #757575;
+  padding: 0 0 0 20px;
+  margin: 5px 0;
+}
+
+.payBtn {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #16db99;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  margin: 20px 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* THANKS DIV */
+
 .thanks-div {
-  /* display: flex; */
-  /* justify-content: center;
-    align-items: center;
-    flex-direction: column; */
   background-color: #ecfdf5;
   color: #065f46;
   border: none;
   border-radius: 3px;
-  /* height: 120px; */
-  /* height: 200px; */
   font-size: 32px;
   text-align: center;
-  /* margin: 20px auto; */
   margin: 30px 30px;
   padding: 0;
-  max-height: 200px;
 }
 
 .thanks-div p {
@@ -357,18 +284,16 @@ form {
   background: none;
   margin: 0 auto;
   padding: 0;
-  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
-  /* width: 60%;
-  height: 40%; */
-  /* border-radius: 0.5rem; */
+  width: 60%;
+  height: 40%;
 }
+
+/* RATING CSS */
 
 .star {
   font-size: 40px;
   cursor: pointer;
   color: #666;
-  margin: 0;
-  padding: 0;
 }
 
 .star:hover {
