@@ -284,8 +284,8 @@ input {
   background: none;
   margin: 0 auto;
   padding: 0;
-  width: 60%;
-  height: 40%;
+  /* width: 60%;
+  height: 40%; */
 }
 
 /* RATING CSS */
