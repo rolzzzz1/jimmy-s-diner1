@@ -97,6 +97,7 @@ h3 {
   background: none;
   font-size: 32px;
   color: #3c3c3c;
+  cursor: pointer;
 }
 
 /* ORDER CSS */
@@ -156,6 +157,7 @@ h3 {
   margin: 30px 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* SINGLE CSS CLASSES */
@@ -284,8 +286,6 @@ input {
   background: none;
   margin: 0 auto;
   padding: 0;
-  /* width: 60%;
-  height: 40%; */
 }
 
 /* RATING CSS */
