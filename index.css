@@ -131,6 +131,7 @@ h3 {
   color: #bbbbbb;
   font-size: 12px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
 }
 
 .priceDiv {
