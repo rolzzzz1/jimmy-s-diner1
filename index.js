@@ -110,6 +110,7 @@ cardForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
   orderArray = [];
+  showTotalPrice.innerText = 0;
 
   const cardFormData = new FormData(cardForm);
 
