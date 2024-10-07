@@ -163,6 +163,9 @@ cardForm.addEventListener("submit", function (e) {
                   `;
   msg = document.getElementById("msg");
   // thanksDiv.classList.toggle("hidden");
+  if (thanksDiv.classList.contains("hidden")) {
+    thanksDiv.classList.remove("hidden");
+  }
 });
 
 // creating order html
