@@ -121,7 +121,9 @@ cardForm.addEventListener("submit", function (e) {
   }
 
   // Clearing rating section
-  thanksDiv.classList.toggle("hidden");
+  if (!thanksDiv.classList.contains("hidden")) {
+    thanksDiv.classList.toggle("hidden");
+  }
 
   // pay Submit code
   const cardFormData = new FormData(cardForm);
