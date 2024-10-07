@@ -51,7 +51,13 @@ function remove() {
 }
 
 // creating and showing menu html
-const menuHtml = menuArray.map(function (emoji, name, ingredients, price, id) {
+const menuHtml = menuArray.map(function ({
+  emoji,
+  name,
+  ingredients,
+  price,
+  id,
+}) {
   return `<section>
             <div class="food-item">
                     <div class="food-item-info">
