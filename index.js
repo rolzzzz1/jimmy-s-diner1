@@ -109,7 +109,7 @@ document.addEventListener("click", function (e) {
 cardForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  checkoutItems.innerHTML = "";
+  orderArray = [];
 
   const cardFormData = new FormData(cardForm);
 
