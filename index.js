@@ -120,6 +120,10 @@ cardForm.addEventListener("submit", function (e) {
     finalCont.classList.toggle("hidden");
   }
 
+  // Clearing rating section
+  thanksDiv.classList.toggle("hidden");
+
+  // pay Submit code
   const cardFormData = new FormData(cardForm);
 
   const name = cardFormData.get("customerName");
