@@ -109,8 +109,11 @@ document.addEventListener("click", function (e) {
 cardForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
+  // Clearing previous order info
   orderArray = [];
   showTotalPrice.innerText = 0;
+  showFinalPrice.innerText = 0;
+  showDiscountPrice.innerText = 0;
 
   const cardFormData = new FormData(cardForm);
 
