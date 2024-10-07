@@ -65,7 +65,7 @@ const menuHtml = menuArray.map(function ({
                             <p>${emoji}</p>
                         </div>
                         <div class="food-item-text">
-                            <p class="size28">${name}</p>
+                            <h3 class="size28">${name}</h3>
                             <p class="size16 descColor">${ingredients.join(
                               ", "
                             )}</p>
