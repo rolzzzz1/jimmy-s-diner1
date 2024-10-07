@@ -162,7 +162,7 @@ cardForm.addEventListener("submit", function (e) {
                                 <p id="msg"><small>Please rate your feedback!<small></p>
                   `;
   msg = document.getElementById("msg");
-  thanksDiv.classList.toggle("hidden");
+  // thanksDiv.classList.toggle("hidden");
 });
 
 // creating order html
