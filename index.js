@@ -122,7 +122,7 @@ cardForm.addEventListener("submit", function (e) {
 
   // Clearing rating section
   if (!thanksDiv.classList.contains("hidden")) {
-    thanksDiv.classList.toggle("hidden");
+    thanksDiv.classList.remove("hidden");
   }
 
   // pay Submit code
