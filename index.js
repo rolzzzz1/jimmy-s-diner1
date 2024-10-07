@@ -1,16 +1,16 @@
 import { menuArray } from "/data.js";
 
 const checkoutItems = document.getElementById("inner-checkout-container");
-const showTotalPrice = document.getElementById("total-price");
-const showFinalPrice = document.getElementById("final-price");
-const showDiscountPrice = document.getElementById("discount-price");
+const totalPriceElement = document.getElementById("total-price");
+const finalPriceElement = document.getElementById("final-price");
+const discountPriceElement = document.getElementById("discount-price");
 let orderArray = [];
 // const completeBtn = document.getElementById("completeBtn");
 const modal = document.getElementById("modal");
 const cardForm = document.getElementById("card-form");
 const thanksDiv = document.getElementById("thanks-div");
-const discountCont = document.getElementById("discount-container");
-const finalCont = document.getElementById("final-container");
+const discountContainer = document.getElementById("discount-container");
+const finalContainer = document.getElementById("final-container");
 let msg = "";
 
 // FEEDBACK RATING
@@ -20,7 +20,7 @@ let stars = document.getElementsByClassName("star");
 let starclass = "";
 
 // Funtion to update rating
-function claculateRating(n) {
+function calculateRating(n) {
   remove();
   for (let i = 0; i < n; i++) {
     if (n == 1) {
@@ -92,19 +92,19 @@ document.addEventListener("click", function (e) {
 
   switch (e.target.id) {
     case "star1":
-      claculateRating(1);
+      calculateRating(1);
       break;
     case "star2":
-      claculateRating(2);
+      calculateRating(2);
       break;
     case "star3":
-      claculateRating(3);
+      calculateRating(3);
       break;
     case "star4":
-      claculateRating(4);
+      calculateRating(4);
       break;
     case "star5":
-      claculateRating(5);
+      calculateRating(5);
       break;
   }
 });
@@ -115,13 +115,13 @@ cardForm.addEventListener("submit", function (e) {
 
   // Clearing previous order info
   orderArray = [];
-  showTotalPrice.innerText = 0;
-  showFinalPrice.innerText = 0;
-  showDiscountPrice.innerText = 0;
+  totalPriceElement.innerText = 0;
+  finalPriceElement.innerText = 0;
+  discountPriceElement.innerText = 0;
 
-  if (!discountCont.classList.contains("hidden")) {
-    discountCont.classList.toggle("hidden");
-    finalCont.classList.toggle("hidden");
+  if (!discountContainer.classList.contains("hidden")) {
+    discountContainer.classList.toggle("hidden");
+    finalContainer.classList.toggle("hidden");
   }
 
   // pay Submit code
@@ -187,7 +187,7 @@ function getOrderHtml() {
 // Removing food item
 function handleRemoveClick(foodItemId) {
   // Setting show total price
-  let totalPrice = Number(showTotalPrice.innerHTML);
+  let totalPrice = Number(totalPriceElement.innerHTML);
 
   // getting object using index of orderarray
   const targetFoodItemObj = orderArray.filter(function (foodItem, index) {
@@ -203,20 +203,20 @@ function handleRemoveClick(foodItemId) {
   checkoutItems.innerHTML = getOrderHtml();
 
   totalPrice -= targetFoodItemObj.price;
-  showTotalPrice.innerText = totalPrice;
+  totalPriceElement.innerText = totalPrice;
 
   // Checking for discount
   let discount = checkDealDiscount();
   if (discount !== 0) {
-    showDiscountPrice.innerText = discount;
-    showFinalPrice.innerText = totalPrice - discount;
+    discountPriceElement.innerText = discount;
+    finalPriceElement.innerText = totalPrice - discount;
   } else {
-    showDiscountPrice.innerText = discount;
-    showFinalPrice.innerText = totalPrice;
+    discountPriceElement.innerText = discount;
+    finalPriceElement.innerText = totalPrice;
 
-    if (!discountCont.classList.contains("hidden")) {
-      discountCont.classList.toggle("hidden");
-      finalCont.classList.toggle("hidden");
+    if (!discountContainer.classList.contains("hidden")) {
+      discountContainer.classList.toggle("hidden");
+      finalContainer.classList.toggle("hidden");
     }
   }
 
@@ -245,25 +245,25 @@ function handleAddClick(foodItemId) {
   // creating and showing order html
   checkoutItems.innerHTML = getOrderHtml();
 
-  let totalPrice = Number(showTotalPrice.innerHTML);
+  let totalPrice = Number(totalPriceElement.innerHTML);
   totalPrice += targetFoodItemObj.price;
-  showTotalPrice.innerText = totalPrice;
+  totalPriceElement.innerText = totalPrice;
 
   //Discount
   let discount = checkDealDiscount();
 
   // Applying discount
   if (discount !== 0) {
-    showDiscountPrice.innerText = discount;
-    showFinalPrice.innerText = totalPrice - discount;
+    discountPriceElement.innerText = discount;
+    finalPriceElement.innerText = totalPrice - discount;
 
-    if (discountCont.classList.contains("hidden")) {
-      discountCont.classList.toggle("hidden");
-      finalCont.classList.toggle("hidden");
+    if (discountContainer.classList.contains("hidden")) {
+      discountContainer.classList.toggle("hidden");
+      finalContainer.classList.toggle("hidden");
     }
   } else {
     // Setting show final price
-    showFinalPrice.innerText = totalPrice;
+    finalPriceElement.innerText = totalPrice;
   }
 
   // adding/removing hidden class (For showing and hiding container divs)
