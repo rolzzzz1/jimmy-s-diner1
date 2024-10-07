@@ -51,25 +51,23 @@ function remove() {
 }
 
 // creating and showing menu html
-const menuHtml = menuArray.map(function (foodItem) {
+const menuHtml = menuArray.map(function (emoji, name, ingredients, price, id) {
   return `<section>
             <div class="food-item">
                     <div class="food-item-info">
                         <div class="food-item-img">
-                            <p>${foodItem.emoji}</p>
+                            <p>${emoji}</p>
                         </div>
                         <div class="food-item-text">
-                            <p class="size28">${foodItem.name}</p>
-                            <p class="size16 descColor">${foodItem.ingredients.join(
+                            <p class="size28">${name}</p>
+                            <p class="size16 descColor">${ingredients.join(
                               ", "
                             )}</p>
-                            <p class="size20">$${foodItem.price}</p>
+                            <p class="size20">$${price}</p>
                         </div>
                     </div>
                     <div>
-                        <button class="addBtn inter-extra-light" data-add="${
-                          foodItem.id
-                        }">+</button>
+                        <button class="addBtn inter-extra-light" data-add="${id}">+</button>
                     </div>
             </div>
         </section>
