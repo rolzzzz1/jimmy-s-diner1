@@ -115,6 +115,11 @@ cardForm.addEventListener("submit", function (e) {
   showFinalPrice.innerText = 0;
   showDiscountPrice.innerText = 0;
 
+  if (!discountCont.classList.contains("hidden")) {
+    discountCont.classList.toggle("hidden");
+    finalCont.classList.toggle("hidden");
+  }
+
   const cardFormData = new FormData(cardForm);
 
   const name = cardFormData.get("customerName");
