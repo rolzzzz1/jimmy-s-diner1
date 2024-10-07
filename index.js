@@ -5,7 +5,7 @@ const showTotalPrice = document.getElementById("total-price");
 const showFinalPrice = document.getElementById("final-price");
 const showDiscountPrice = document.getElementById("discount-price");
 let orderArray = [];
-const completeBtn = document.getElementById("completeBtn");
+// const completeBtn = document.getElementById("completeBtn");
 const modal = document.getElementById("modal");
 const cardForm = document.getElementById("card-form");
 const thanksDiv = document.getElementById("thanks-div");
@@ -108,6 +108,9 @@ document.addEventListener("click", function (e) {
 // form event listener
 cardForm.addEventListener("submit", function (e) {
   e.preventDefault();
+
+  checkoutItems.innerHTML = "";
+
   const cardFormData = new FormData(cardForm);
 
   const name = cardFormData.get("customerName");
