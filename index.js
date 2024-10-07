@@ -120,11 +120,6 @@ cardForm.addEventListener("submit", function (e) {
     finalCont.classList.toggle("hidden");
   }
 
-  // Clearing rating section
-  if (!thanksDiv.classList.contains("hidden")) {
-    thanksDiv.classList.add("hidden");
-  }
-
   // pay Submit code
   const cardFormData = new FormData(cardForm);
 
@@ -162,10 +157,7 @@ cardForm.addEventListener("submit", function (e) {
                                 <p id="msg"><small>Please rate your feedback!<small></p>
                   `;
   msg = document.getElementById("msg");
-  // thanksDiv.classList.toggle("hidden");
-  if (thanksDiv.classList.contains("hidden")) {
-    thanksDiv.classList.remove("hidden");
-  }
+  thanksDiv.classList.toggle("hidden");
 });
 
 // creating order html
@@ -234,6 +226,11 @@ function handleRemoveClick(foodItemId) {
 
 // Adding food item
 function handleAddClick(foodItemId) {
+  // Clearing rating section
+  if (!thanksDiv.classList.contains("hidden")) {
+    thanksDiv.classList.add("hidden");
+  }
+
   // getting food object from data using food item id
   const targetFoodItemObj = menuArray.filter(function (foodItem) {
     return foodItem.id === Number(foodItemId);
