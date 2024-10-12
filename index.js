@@ -239,11 +239,14 @@ function handleAddClick(foodItemId) {
   const targetFoodItemObj = menuArray.filter(function (foodItem) {
     if (foodItem.id === Number(foodItemId)) {
       foodItem.quantity += 1;
+      if (foodItem.quantity === 0) {
+        orderArray.push(targetFoodItemObj);
+      }
     }
     return foodItem.id === Number(foodItemId);
   })[0];
 
-  orderArray.push(targetFoodItemObj);
+  // orderArray.push(targetFoodItemObj);
 
   console.log(orderArray);
 
