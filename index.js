@@ -238,10 +238,10 @@ function handleAddClick(foodItemId) {
   // getting food object from data using food item id
   const targetFoodItemObj = menuArray.filter(function (foodItem) {
     if (foodItem.id === Number(foodItemId)) {
-      foodItem.quantity += 1;
       if (foodItem.quantity === 0) {
         orderArray.push(foodItem);
       }
+      foodItem.quantity += 1;
     }
     return foodItem.id === Number(foodItemId);
   })[0];
