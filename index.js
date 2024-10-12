@@ -239,8 +239,6 @@ function handleAddClick(foodItemId) {
     thanksDiv.classList.add("hidden");
   }
 
-  let totalPrice = Number(totalPriceElement.innerHTML);
-
   // getting food object from data using food item id
   const targetFoodItemObj = menuArray.filter(function (foodItem) {
     if (foodItem.id === Number(foodItemId)) {
@@ -248,7 +246,6 @@ function handleAddClick(foodItemId) {
         orderArray.push(foodItem);
       }
       foodItem.quantity += 1;
-      totalPrice += foodItem.price * foodItem.quantity;
     }
     return foodItem.id === Number(foodItemId);
   })[0];
@@ -260,8 +257,8 @@ function handleAddClick(foodItemId) {
   // creating and showing order html
   checkoutItems.innerHTML = getOrderHtml();
 
-  // let totalPrice = Number(totalPriceElement.innerHTML);
-  // totalPrice += targetFoodItemObj.price;
+  let totalPrice = Number(totalPriceElement.innerHTML);
+  totalPrice += targetFoodItemObj.price;
   totalPriceElement.innerText = totalPrice;
 
   //Discount
