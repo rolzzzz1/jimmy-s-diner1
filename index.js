@@ -191,7 +191,10 @@ function handleRemoveClick(foodItemId) {
 
   // getting object using index of orderarray
   const targetFoodItemObj = orderArray.filter(function (foodItem, index) {
-    foodItem.quantity = 0;
+    if (foodItem.id === Number(foodItemId)) {
+      foodItem.quantity = 0;
+    }
+
     return index === Number(foodItemId);
   })[0];
 
@@ -293,11 +296,11 @@ function checkDealDiscount() {
 
   orderArray.forEach(function (item) {
     if (item.id === 0) {
-      pizzaCount++;
+      pizzaCount = item.quantity;
     } else if (item.id === 1) {
-      burgerCount++;
+      burgerCount = item.quantity;
     } else if (item.id === 2) {
-      beerCount++;
+      beerCount = item.quantity;
     }
   });
 
