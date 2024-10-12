@@ -242,6 +242,8 @@ function handleAddClick(foodItemId) {
 
   orderArray.push(targetFoodItemObj);
 
+  console.log(orderArray);
+
   // creating and showing order html
   checkoutItems.innerHTML = getOrderHtml();
 
