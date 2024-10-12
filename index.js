@@ -248,7 +248,7 @@ function handleAddClick(foodItemId) {
         orderArray.push(foodItem);
       }
       foodItem.quantity += 1;
-      totalPrice = foodItem.price * foodItem.quantity;
+      totalPrice += foodItem.price * foodItem.quantity;
     }
     return foodItem.id === Number(foodItemId);
   })[0];
