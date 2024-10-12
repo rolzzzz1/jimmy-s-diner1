@@ -173,8 +173,8 @@ function getOrderHtml() {
                             <div class="checkout-item-info">
                                 <p class="size28 padding0 margin0">${
                                   order.name
-                                }<span> x ${
-      order.quantity > 1 ? order.quantity : ""
+                                }<span> ${
+      order.quantity > 1 ? `x ${order.quantity}` : ""
     } </span></p>
                                 <button class="removeBtn" data-remove="${index}">remove</button>
                             </div>
