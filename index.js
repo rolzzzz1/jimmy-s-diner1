@@ -191,6 +191,7 @@ function handleRemoveClick(foodItemId) {
 
   // getting object using index of orderarray
   const targetFoodItemObj = orderArray.filter(function (foodItem, index) {
+    foodItem.quantity = 0;
     return index === Number(foodItemId);
   })[0];
 
