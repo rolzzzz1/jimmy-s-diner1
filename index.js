@@ -171,7 +171,7 @@ function getOrderHtml() {
     orderHtml += `
                         <div class="checkout-item">
                             <div class="checkout-item-info">
-                                <p class="size28 padding0 margin0">${order.name}</p>
+                                <p class="size28 padding0 margin0">${order.name} x ${order.quantity}</p>
                                 <button class="removeBtn" data-remove="${index}">remove</button>
                             </div>
                             <div class="priceDiv">
