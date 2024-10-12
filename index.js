@@ -239,7 +239,7 @@ function handleAddClick(foodItemId) {
     thanksDiv.classList.add("hidden");
   }
 
-  let totalPrice;
+  let totalPrice = Number(totalPriceElement.innerHTML);
 
   // getting food object from data using food item id
   const targetFoodItemObj = menuArray.filter(function (foodItem) {
