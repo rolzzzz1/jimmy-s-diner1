@@ -210,7 +210,7 @@ function handleRemoveClick(foodItemId) {
 
   // removing this specific object from orderarray
   const modifiedFoodItemObj = orderArray.filter(
-    (foodItem, i) => i !== Number(foodItemId)
+    (foodItem, i) => foodItem.id !== Number(foodItemId)
   );
   orderArray = modifiedFoodItemObj;
 
