@@ -87,6 +87,7 @@ document.addEventListener("click", function (e) {
     handleRemoveClick(e.target.dataset.remove);
   } else if (e.target.id === "completeBtn") {
     console.log("Complete button clicked");
+    $(".overlay").show();
     modal.classList.toggle("hidden");
     console.log(modal.classList);
   }
