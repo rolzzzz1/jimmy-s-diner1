@@ -212,7 +212,7 @@ function handleRemoveClick(foodItemId) {
 
   checkoutItems.innerHTML = getOrderHtml();
 
-  totalPrice -= targetFoodItemObj.price;
+  totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
   totalPriceElement.innerText = totalPrice;
 
   // Checking for discount
