@@ -38,7 +38,6 @@ function calculateRating(n) {
   }
 
   msg.innerHTML = `<small>Thank you for your feedback.</small>`;
-  // console.log('Rating - '+n+ '. Thank you for your feedback.')
 }
 
 // To remove the pre-applied styling
@@ -167,7 +166,6 @@ cardForm.addEventListener("submit", function (e) {
 // creating order html
 function getOrderHtml() {
   let orderHtml = "";
-  console.log(orderArray);
   orderArray.forEach(function (order) {
     orderHtml += `
                         <div class="checkout-item">
@@ -216,14 +214,10 @@ function handleRemoveClick(foodItemId) {
   );
   orderArray = modifiedFoodItemObj;
 
-  console.log(orderArray);
-
   checkoutItems.innerHTML = getOrderHtml(); // some problem here
 
   // Checking for discount
   let discount = checkDealDiscount();
-
-  console.log(discount);
 
   if (discount !== 0) {
     discountPriceElement.innerText = discount;
@@ -248,8 +242,6 @@ function handleRemoveClick(foodItemId) {
 
 // Adding food item
 function handleAddClick(foodItemId) {
-  console.log("Add item id - " + foodItemId);
-
   // Clearing rating section
   if (!thanksDiv.classList.contains("hidden")) {
     thanksDiv.classList.add("hidden");
@@ -267,8 +259,6 @@ function handleAddClick(foodItemId) {
   })[0];
 
   // orderArray.push(targetFoodItemObj);
-
-  console.log(orderArray);
 
   // creating and showing order html
   checkoutItems.innerHTML = getOrderHtml();

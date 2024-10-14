@@ -65,36 +65,38 @@
           <!-- Thanks message and rating -->
         </div>
       </main>
-      <div class="modal hidden" id="modal">
-        <form class="modal-inner" id="card-form">
-          <p class="modal-title">Enter card details</p>
-          <!-- <label for="customerName">Customer Name</label> -->
-          <input
-            type="text"
-            id="customerName"
-            name="customerName"
-            placeholder="Enter your name"
-            required
-          />
-          <!-- <label for="customerCardNumber">Card Number</label> -->
-          <input
-            type="number"
-            id="customerCardNumber"
-            name="customerCardNumber"
-            placeholder="Enter card number"
-            required
-          />
-          <!-- <label for="customerCVV">Card CVV</label> -->
-          <input
-            type="number"
-            id="customerCVV"
-            name="customerCVV"
-            placeholder="Enter CVV"
-            required
-          />
+      <div class="overlay">
+        <div class="modal hidden" id="modal">
+          <form class="modal-inner" id="card-form">
+            <p class="modal-title">Enter card details</p>
+            <!-- <label for="customerName">Customer Name</label> -->
+            <input
+              type="text"
+              id="customerName"
+              name="customerName"
+              placeholder="Enter your name"
+              required
+            />
+            <!-- <label for="customerCardNumber">Card Number</label> -->
+            <input
+              type="number"
+              id="customerCardNumber"
+              name="customerCardNumber"
+              placeholder="Enter card number"
+              required
+            />
+            <!-- <label for="customerCVV">Card CVV</label> -->
+            <input
+              type="number"
+              id="customerCVV"
+              name="customerCVV"
+              placeholder="Enter CVV"
+              required
+            />
 
-          <button type="submit" class="payBtn" id="payBtn">Pay</button>
-        </form>
+            <button type="submit" class="payBtn" id="payBtn">Pay</button>
+          </form>
+        </div>
       </div>
     </div>
 
