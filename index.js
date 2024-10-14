@@ -92,7 +92,7 @@ document.addEventListener("click", function (e) {
   } else if (e.target.id === "completeBtn") {
     console.log("Complete button clicked");
     overlay.style.display = "flex";
-    modal.classList.toggle("hidden");
+    // modal.classList.toggle("hidden");
     console.log(modal.classList);
   }
 
