@@ -236,14 +236,12 @@ function handleRemoveClick(foodItemId) {
     }
   }
 
-  // if (orderArray.length !== 0) {
-  //   checkoutItems.innerHTML = getOrderHtml();
-  // } else {
-  //   const classlistCheckoutContainer = document.getElementById(
-  //     `order-checkout-container`
-  //   ).classList;
-  //   classlistCheckoutContainer.toggle("hidden");
-  // }
+  const classlistCheckoutContainer = document.getElementById(
+    `order-checkout-container`
+  ).classList;
+  if (orderArray.length === 0) {
+    classlistCheckoutContainer.toggle("hidden");
+  }
 
   // totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
   // totalPriceElement.innerText = totalPrice;
