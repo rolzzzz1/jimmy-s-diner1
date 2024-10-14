@@ -300,6 +300,8 @@ function handleRemoveClick(foodItemId) {
 
 // Adding food item
 function handleAddClick(foodItemId) {
+  console.log("Add item id - " + foodItemId);
+
   // Clearing rating section
   if (!thanksDiv.classList.contains("hidden")) {
     thanksDiv.classList.add("hidden");
