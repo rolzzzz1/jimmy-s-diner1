@@ -213,7 +213,7 @@ function handleRemoveClick(foodItemId) {
   orderArray = modifiedFoodItemObj;
 
   console.log(orderArray);
-  checkoutItems.innerHTML = getOrderHtml();
+  // checkoutItems.innerHTML = getOrderHtml(); // some problem here
 
   // Checking for discount
   let discount = checkDealDiscount();
