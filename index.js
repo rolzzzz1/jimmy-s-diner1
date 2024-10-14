@@ -242,34 +242,6 @@ function handleRemoveClick(foodItemId) {
   if (orderArray.length === 0) {
     classlistCheckoutContainer.toggle("hidden");
   }
-
-  // totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
-  // totalPriceElement.innerText = totalPrice;
-
-  // Checking for discount
-  // let discount = checkDealDiscount();
-
-  // console.log(discount);
-
-  // if (discount !== 0) {
-  //   discountPriceElement.innerText = discount;
-  //   finalPriceElement.innerText = totalPrice - discount;
-  // } else {
-  //   discountPriceElement.innerText = discount;
-  //   finalPriceElement.innerText = totalPrice;
-
-  //   if (!discountContainer.classList.contains("hidden")) {
-  //     discountContainer.classList.toggle("hidden");
-  //     finalContainer.classList.toggle("hidden");
-  //   }
-  // }
-
-  // const classlistCheckoutContainer = document.getElementById(
-  //   `order-checkout-container`
-  // ).classList;
-  // if (orderArray.length === 0) {
-  //   classlistCheckoutContainer.toggle("hidden");
-  // }
 }
 
 // Adding food item
