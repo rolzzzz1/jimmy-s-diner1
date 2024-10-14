@@ -240,7 +240,7 @@ function handleRemoveClick(foodItemId) {
 
   // checkoutItems.innerHTML = orderHtml;
 
-  // checkoutItems.innerHTML = getOrderHtml(); // some problem here
+  checkoutItems.innerHTML = getOrderHtml(); // some problem here
 
   // Checking for discount
   let discount = checkDealDiscount();
