@@ -200,49 +200,49 @@ function handleRemoveClick(foodItemId) {
     if (foodItem.id === Number(foodItemId)) {
       totalPrice -= foodItem.price * foodItem.quantity;
       console.log(totalPrice);
-      totalPriceElement.innerText = totalPrice;
+      // totalPriceElement.innerText = totalPrice;
 
-      foodItem.quantity = 0;
+      // foodItem.quantity = 0;
     }
 
     return index === Number(foodItemId);
   })[0];
 
   // removing this specific object from orderarray
-  const modifiedFoodItemObj = orderArray.filter(
-    (foodItem, i) => i !== Number(foodItemId)
-  );
-  orderArray = modifiedFoodItemObj;
+  // const modifiedFoodItemObj = orderArray.filter(
+  //   (foodItem, i) => i !== Number(foodItemId)
+  // );
+  // orderArray = modifiedFoodItemObj;
 
-  checkoutItems.innerHTML = getOrderHtml();
+  // checkoutItems.innerHTML = getOrderHtml();
 
   // totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
   // totalPriceElement.innerText = totalPrice;
 
   // Checking for discount
-  let discount = checkDealDiscount();
+  // let discount = checkDealDiscount();
 
-  console.log(discount);
+  // console.log(discount);
 
-  if (discount !== 0) {
-    discountPriceElement.innerText = discount;
-    finalPriceElement.innerText = totalPrice - discount;
-  } else {
-    discountPriceElement.innerText = discount;
-    finalPriceElement.innerText = totalPrice;
+  // if (discount !== 0) {
+  //   discountPriceElement.innerText = discount;
+  //   finalPriceElement.innerText = totalPrice - discount;
+  // } else {
+  //   discountPriceElement.innerText = discount;
+  //   finalPriceElement.innerText = totalPrice;
 
-    if (!discountContainer.classList.contains("hidden")) {
-      discountContainer.classList.toggle("hidden");
-      finalContainer.classList.toggle("hidden");
-    }
-  }
+  //   if (!discountContainer.classList.contains("hidden")) {
+  //     discountContainer.classList.toggle("hidden");
+  //     finalContainer.classList.toggle("hidden");
+  //   }
+  // }
 
-  const classlistCheckoutContainer = document.getElementById(
-    `order-checkout-container`
-  ).classList;
-  if (orderArray.length === 0) {
-    classlistCheckoutContainer.toggle("hidden");
-  }
+  // const classlistCheckoutContainer = document.getElementById(
+  //   `order-checkout-container`
+  // ).classList;
+  // if (orderArray.length === 0) {
+  //   classlistCheckoutContainer.toggle("hidden");
+  // }
 }
 
 // Adding food item
