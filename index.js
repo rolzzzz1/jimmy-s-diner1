@@ -91,7 +91,7 @@ document.addEventListener("click", function (e) {
     handleRemoveClick(e.target.dataset.remove);
   } else if (e.target.id === "completeBtn") {
     console.log("Complete button clicked");
-    overlay.style.display = "block";
+    overlay.style.display = "flex";
     modal.classList.toggle("hidden");
     console.log(modal.classList);
   }
