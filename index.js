@@ -88,6 +88,7 @@ document.addEventListener("click", function (e) {
   } else if (e.target.id === "completeBtn") {
     console.log("Complete button clicked");
     modal.classList.toggle("hidden");
+    console.log(modal.classList);
   }
 
   switch (e.target.id) {
