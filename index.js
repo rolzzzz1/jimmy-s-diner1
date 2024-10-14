@@ -209,10 +209,12 @@ function handleRemoveClick(foodItemId) {
   })[0];
 
   // removing this specific object from orderarray
-  // const modifiedFoodItemObj = orderArray.filter(
-  //   (foodItem, i) => i !== Number(foodItemId)
-  // );
-  // orderArray = modifiedFoodItemObj;
+  const modifiedFoodItemObj = orderArray.filter(
+    (foodItem, i) => i !== Number(foodItemId)
+  );
+  orderArray = modifiedFoodItemObj;
+
+  console.log(orderArray);
 
   // checkoutItems.innerHTML = getOrderHtml();
 
