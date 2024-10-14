@@ -137,7 +137,9 @@ h3 {
 }
 
 .quantity {
-  font-size: 10px;
+  font-size: 16px;
+  color: #41424c;
+  padding: 0 5px;
 }
 
 .removeBtn {
