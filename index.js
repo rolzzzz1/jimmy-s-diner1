@@ -202,7 +202,7 @@ function handleRemoveClick(foodItemId) {
       console.log(totalPrice);
       totalPriceElement.innerText = totalPrice;
 
-      // foodItem.quantity = 0;
+      foodItem.quantity = 0;
     }
 
     return index === Number(foodItemId);
