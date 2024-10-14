@@ -199,7 +199,6 @@ function handleRemoveClick(foodItemId) {
   const targetFoodItemObj = orderArray.filter(function (foodItem, index) {
     if (foodItem.id === Number(foodItemId)) {
       totalPrice -= foodItem.price * foodItem.quantity;
-      console.log(totalPrice);
       totalPriceElement.innerText = totalPrice;
     }
 
