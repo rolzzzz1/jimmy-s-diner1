@@ -203,7 +203,7 @@ function handleRemoveClick(foodItemId) {
       totalPriceElement.innerText = totalPrice;
     }
 
-    return index === Number(foodItemId);
+    return foodItem.id === Number(foodItemId);
   })[0];
 
   // removing this specific object from orderarray
