@@ -214,7 +214,32 @@ function handleRemoveClick(foodItemId) {
 
   console.log(orderArray);
 
-  checkoutItems.innerHTML = getOrderHtml();
+  // Checking for discount
+  let discount = checkDealDiscount();
+
+  console.log(discount);
+
+  if (discount !== 0) {
+    discountPriceElement.innerText = discount;
+    finalPriceElement.innerText = totalPrice - discount;
+  } else {
+    discountPriceElement.innerText = discount;
+    finalPriceElement.innerText = totalPrice;
+
+    if (!discountContainer.classList.contains("hidden")) {
+      discountContainer.classList.toggle("hidden");
+      finalContainer.classList.toggle("hidden");
+    }
+  }
+
+  if (orderArray.length !== 0) {
+    checkoutItems.innerHTML = getOrderHtml();
+  } else {
+    const classlistCheckoutContainer = document.getElementById(
+      `order-checkout-container`
+    ).classList;
+    classlistCheckoutContainer.toggle("hidden");
+  }
 
   // totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
   // totalPriceElement.innerText = totalPrice;
