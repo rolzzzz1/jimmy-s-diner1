@@ -252,8 +252,15 @@ function handleAddClick(foodItemId) {
     thanksDiv.classList.add("hidden");
   }
 
-  if (checkoutItems.classList.contains("hidden")) {
-    checkoutItems.classList.remove("hidden");
+  // if (checkoutItems.classList.contains("hidden")) {
+  //   checkoutItems.classList.remove("hidden");
+  // }
+
+  const classlistCheckoutContainer = document.getElementById(
+    `order-checkout-container`
+  ).classList;
+  if (classlistCheckoutContainer.contains("hidden")) {
+    classlistCheckoutContainer.toggle("hidden");
   }
 
   // getting food object from data using food item id
