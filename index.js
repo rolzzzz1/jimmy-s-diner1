@@ -140,6 +140,7 @@ cardForm.addEventListener("submit", function (e) {
     `order-checkout-container`
   ).classList;
   classlistCheckoutContainer.toggle("hidden");
+  overlay.style.display = "none";
 
   thanksDiv.innerHTML = `
                             <p>Thanks, ${name}! Your order is on its way!</p>
