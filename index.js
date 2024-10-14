@@ -203,6 +203,8 @@ function handleRemoveClick(foodItemId) {
     if (foodItem.id === Number(foodItemId)) {
       totalPrice -= foodItem.price * foodItem.quantity;
       totalPriceElement.innerText = totalPrice;
+
+      foodItem.quantity = 0;
     }
 
     return foodItem.id === Number(foodItemId);
