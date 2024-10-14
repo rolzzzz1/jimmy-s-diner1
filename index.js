@@ -12,6 +12,9 @@ const cardForm = document.getElementById("card-form");
 const thanksDiv = document.getElementById("thanks-div");
 const discountContainer = document.getElementById("discount-container");
 const finalContainer = document.getElementById("final-container");
+const classlistCheckoutContainer = document.getElementById(
+  `order-checkout-container`
+).classList;
 let msg = "";
 
 // FEEDBACK RATING
@@ -136,9 +139,6 @@ cardForm.addEventListener("submit", function (e) {
 
   modal.classList.toggle("hidden");
 
-  const classlistCheckoutContainer = document.getElementById(
-    `order-checkout-container`
-  ).classList;
   classlistCheckoutContainer.toggle("hidden");
   overlay.style.display = "none";
 
@@ -237,9 +237,6 @@ function handleRemoveClick(foodItemId) {
     }
   }
 
-  const classlistCheckoutContainer = document.getElementById(
-    `order-checkout-container`
-  ).classList;
   if (orderArray.length === 0) {
     classlistCheckoutContainer.toggle("hidden");
   }
@@ -256,9 +253,6 @@ function handleAddClick(foodItemId) {
   //   checkoutItems.classList.remove("hidden");
   // }
 
-  const classlistCheckoutContainer = document.getElementById(
-    `order-checkout-container`
-  ).classList;
   if (classlistCheckoutContainer.contains("hidden")) {
     classlistCheckoutContainer.toggle("hidden");
   }
@@ -301,9 +295,7 @@ function handleAddClick(foodItemId) {
   }
 
   // adding/removing hidden class (For showing and hiding container divs)
-  const classlistCheckoutContainer = document.getElementById(
-    `order-checkout-container`
-  ).classList;
+
   if (classlistCheckoutContainer.contains("hidden")) {
     classlistCheckoutContainer.toggle("hidden");
   }
