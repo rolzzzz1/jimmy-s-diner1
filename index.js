@@ -195,8 +195,6 @@ function getOrderHtml() {
 
 // Removing food item
 function handleRemoveClick(foodItemId) {
-  console.log("id of food item to be removed - " + foodItemId);
-
   // Setting show total price
   let totalPrice = Number(totalPriceElement.innerHTML);
 
@@ -218,31 +216,7 @@ function handleRemoveClick(foodItemId) {
 
   console.log(orderArray);
 
-  // let orderHtml = "";
-
-  // orderArray.forEach(function (order, index) {
-  //   orderHtml += `
-  //                       <div class="checkout-item">
-  //                           <div class="checkout-item-info">
-  //                               <p class="size28 padding0 margin0">${
-  //                                 order.name
-  //                               }<span class="quantity"> ${
-  //     order.quantity > 1 ? `x ${order.quantity}` : ""
-  //   } </span></p>
-  //                               <button class="removeBtn" data-remove="${index}">remove</button>
-  //                           </div>
-  //                           <div class="priceDiv">
-  //                               <p class="padding0 margin0">$${
-  //                                 order.price * order.quantity
-  //                               }</p>
-  //                           </div>
-  //                       </div>
-  //                   `;
-  // });
-
-  // checkoutItems.innerHTML = orderHtml;
-
-  // checkoutItems.innerHTML = getOrderHtml(); // some problem here
+  checkoutItems.innerHTML = getOrderHtml(); // some problem here
 
   // Checking for discount
   let discount = checkDealDiscount();
