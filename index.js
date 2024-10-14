@@ -168,7 +168,7 @@ cardForm.addEventListener("submit", function (e) {
 function getOrderHtml() {
   let orderHtml = "";
   console.log(orderArray);
-  orderArray.forEach(function (order, index) {
+  orderArray.forEach(function (order) {
     orderHtml += `
                         <div class="checkout-item">
                             <div class="checkout-item-info">
@@ -177,7 +177,9 @@ function getOrderHtml() {
                                 }<span class="quantity"> ${
       order.quantity > 1 ? `x ${order.quantity}` : ""
     } </span></p>
-                                <button class="removeBtn" data-remove="${index}">remove</button>
+                                <button class="removeBtn" data-remove="${
+                                  order.id
+                                }">remove</button>
                             </div>
                             <div class="priceDiv">
                                 <p class="padding0 margin0">$${
