@@ -199,8 +199,20 @@ function handleRemoveClick(foodItemId) {
   const targetFoodItemObj = orderArray.filter(function (foodItem, index) {
     if (foodItem.id === Number(foodItemId)) {
       totalPrice -= foodItem.price * foodItem.quantity;
-      console.log("total price - " + totalPrice);
       totalPriceElement.innerText = totalPrice;
+
+      console.log(totalPrice);
+
+      // removing this specific object from orderarray
+      const modifiedFoodItemObj = orderArray.filter(
+        (foodItem, i) => i !== Number(foodItemId)
+      );
+      orderArray = modifiedFoodItemObj;
+
+      console.log(orderArray);
+
+      checkoutItems.innerHTML = getOrderHtml();
+
       foodItem.quantity = 0;
     }
 
@@ -208,18 +220,21 @@ function handleRemoveClick(foodItemId) {
   })[0];
 
   // removing this specific object from orderarray
-  const modifiedFoodItemObj = orderArray.filter(
-    (foodItem, i) => i !== Number(foodItemId)
-  );
-  orderArray = modifiedFoodItemObj;
+  // const modifiedFoodItemObj = orderArray.filter(
+  //   (foodItem, i) => i !== Number(foodItemId)
+  // );
+  // orderArray = modifiedFoodItemObj;
 
-  checkoutItems.innerHTML = getOrderHtml();
+  // checkoutItems.innerHTML = getOrderHtml();
 
   // totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
   // totalPriceElement.innerText = totalPrice;
 
   // Checking for discount
   let discount = checkDealDiscount();
+
+  console.log(discount);
+
   if (discount !== 0) {
     discountPriceElement.innerText = discount;
     finalPriceElement.innerText = totalPrice - discount;
