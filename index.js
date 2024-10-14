@@ -210,13 +210,13 @@ function handleRemoveClick(foodItemId) {
 
   // removing this specific object from orderarray
   const modifiedFoodItemObj = orderArray.filter(
-    (foodItem, i) => foodItem.id !== Number(foodItemId)
+    (foodItem) => foodItem.id !== Number(foodItemId)
   );
   orderArray = modifiedFoodItemObj;
 
   console.log(orderArray);
 
-  // checkoutItems.innerHTML = getOrderHtml();
+  checkoutItems.innerHTML = getOrderHtml();
 
   // totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
   // totalPriceElement.innerText = totalPrice;
