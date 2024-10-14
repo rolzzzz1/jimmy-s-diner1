@@ -235,6 +235,9 @@ function handleRemoveClick(foodItemId) {
                         </div>
                     `;
   });
+
+  checkoutItems.innerHTML = orderHtml;
+
   // checkoutItems.innerHTML = getOrderHtml(); // some problem here
 
   // Checking for discount
