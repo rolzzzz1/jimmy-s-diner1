@@ -198,6 +198,8 @@ function handleRemoveClick(foodItemId) {
   // getting object using index of orderarray
   const targetFoodItemObj = orderArray.filter(function (foodItem, index) {
     if (foodItem.id === Number(foodItemId)) {
+      totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
+      totalPriceElement.innerText = totalPrice;
       foodItem.quantity = 0;
     }
 
@@ -212,8 +214,8 @@ function handleRemoveClick(foodItemId) {
 
   checkoutItems.innerHTML = getOrderHtml();
 
-  totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
-  totalPriceElement.innerText = totalPrice;
+  // totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
+  // totalPriceElement.innerText = totalPrice;
 
   // Checking for discount
   let discount = checkDealDiscount();
