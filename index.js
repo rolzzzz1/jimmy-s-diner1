@@ -198,20 +198,9 @@ function handleRemoveClick(foodItemId) {
   // getting object using index of orderarray
   const targetFoodItemObj = orderArray.filter(function (foodItem, index) {
     if (foodItem.id === Number(foodItemId)) {
-      totalPrice -= foodItem.price * foodItem.quantity;
-      totalPriceElement.innerText = totalPrice;
-
+      totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
       console.log(totalPrice);
-
-      // removing this specific object from orderarray
-      const modifiedFoodItemObj = orderArray.filter(
-        (foodItem, i) => i !== Number(foodItemId)
-      );
-      orderArray = modifiedFoodItemObj;
-
-      console.log(orderArray);
-
-      checkoutItems.innerHTML = getOrderHtml();
+      totalPriceElement.innerText = totalPrice;
 
       foodItem.quantity = 0;
     }
@@ -220,12 +209,12 @@ function handleRemoveClick(foodItemId) {
   })[0];
 
   // removing this specific object from orderarray
-  // const modifiedFoodItemObj = orderArray.filter(
-  //   (foodItem, i) => i !== Number(foodItemId)
-  // );
-  // orderArray = modifiedFoodItemObj;
+  const modifiedFoodItemObj = orderArray.filter(
+    (foodItem, i) => i !== Number(foodItemId)
+  );
+  orderArray = modifiedFoodItemObj;
 
-  // checkoutItems.innerHTML = getOrderHtml();
+  checkoutItems.innerHTML = getOrderHtml();
 
   // totalPrice -= targetFoodItemObj.price * targetFoodItemObj.quantity;
   // totalPriceElement.innerText = totalPrice;
