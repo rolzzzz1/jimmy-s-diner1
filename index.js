@@ -249,9 +249,9 @@ function handleAddClick(foodItemId) {
     thanksDiv.classList.add("hidden");
   }
 
-  // if (checkoutItems.classList.contains("hidden")) {
-  //   checkoutItems.classList.remove("hidden");
-  // }
+  if (checkoutItems.classList.contains("hidden")) {
+    checkoutItems.classList.remove("hidden");
+  }
 
   if (classlistCheckoutContainer.contains("hidden")) {
     classlistCheckoutContainer.toggle("hidden");
