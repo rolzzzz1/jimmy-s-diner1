@@ -6,6 +6,7 @@ const finalPriceElement = document.getElementById("final-price");
 const discountPriceElement = document.getElementById("discount-price");
 let orderArray = [];
 // const completeBtn = document.getElementById("completeBtn");
+const overlay = document.getElementById("overlay");
 const modal = document.getElementById("modal");
 const cardForm = document.getElementById("card-form");
 const thanksDiv = document.getElementById("thanks-div");
@@ -87,7 +88,7 @@ document.addEventListener("click", function (e) {
     handleRemoveClick(e.target.dataset.remove);
   } else if (e.target.id === "completeBtn") {
     console.log("Complete button clicked");
-    $(".overlay").show();
+    overlay.show();
     modal.classList.toggle("hidden");
     console.log(modal.classList);
   }
