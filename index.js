@@ -200,7 +200,7 @@ function handleRemoveClick(foodItemId) {
     if (foodItem.id === Number(foodItemId)) {
       totalPrice -= foodItem.price * foodItem.quantity;
       console.log(totalPrice);
-      // totalPriceElement.innerText = totalPrice;
+      totalPriceElement.innerText = totalPrice;
 
       // foodItem.quantity = 0;
     }
