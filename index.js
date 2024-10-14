@@ -138,7 +138,6 @@ cardForm.addEventListener("submit", function (e) {
   const cardCvv = cardFormData.get("customerCVV");
 
   modal.classList.toggle("hidden");
-  console.log(checkoutItems.classList);
   classlistCheckoutContainer.toggle("hidden");
   overlay.style.display = "none";
 
@@ -248,6 +247,9 @@ function handleAddClick(foodItemId) {
   if (!thanksDiv.classList.contains("hidden")) {
     thanksDiv.classList.add("hidden");
   }
+
+  console.log(checkoutItems.classList);
+  console.log(classlistCheckoutContainer);
 
   if (checkoutItems.classList.contains("hidden")) {
     checkoutItems.classList.remove("hidden");
