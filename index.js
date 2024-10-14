@@ -180,7 +180,7 @@ function getOrderHtml() {
                             </div>
                             <div class="priceDiv">
                                 <p class="padding0 margin0">$${
-                                  order.price * quantity
+                                  order.price * order.quantity
                                 }</p> 
                             </div>
                         </div>
