@@ -47,12 +47,14 @@ header {
   font-size: 39px;
   padding: 40px 0 0px 40px;
   margin: 0;
+  text-decoration: none;
 }
 
 .header-sub-title {
   font-size: 22px;
   margin: 0;
   padding: 0 0 0 40px;
+  text-decoration: none;
 }
 
 /* MENU CSS */
@@ -79,7 +81,6 @@ h1,
 h3 {
   margin: 0;
   padding: 0 0 5px 0;
-  text-decoration: none;
 }
 
 .food-item-img {
