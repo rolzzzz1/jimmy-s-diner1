@@ -91,8 +91,8 @@ document.addEventListener("click", function (e) {
     handleRemoveClick(e.target.dataset.remove);
   } else if (e.target.id === "completeBtn") {
     console.log("Complete button clicked");
-    overlay.style.display = "flex";
-    // modal.classList.toggle("hidden");
+    overlay.style.display = "block";
+    modal.classList.toggle("hidden");
     console.log(modal.classList);
   }
 
@@ -138,7 +138,7 @@ cardForm.addEventListener("submit", function (e) {
   const cardCvv = cardFormData.get("customerCVV");
 
   modal.classList.toggle("hidden");
-
+  console.log(checkoutItems.classList);
   classlistCheckoutContainer.toggle("hidden");
   overlay.style.display = "none";
 
