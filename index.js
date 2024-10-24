@@ -16,6 +16,7 @@ const classlistCheckoutContainer = document.getElementById(
   `order-checkout-container`
 ).classList;
 let msg = "";
+let nextOrder = false;
 
 // FEEDBACK RATING
 
@@ -124,6 +125,9 @@ cardForm.addEventListener("submit", function (e) {
   totalPriceElement.innerText = 0;
   finalPriceElement.innerText = 0;
   discountPriceElement.innerText = 0;
+  menuArray.forEach(function (item) {
+    item.quantity = 0;
+  });
 
   if (!discountContainer.classList.contains("hidden")) {
     discountContainer.classList.toggle("hidden");
