@@ -275,6 +275,7 @@ function handleAddClick(foodItemId) {
 
   if (targetFoodItemObj.quantity === 0) {
     orderArray.push(targetFoodItemObj);
+    item.quantity++;
   } else {
     orderArray.forEach(function (item) {
       if (item.id === targetFoodItemObj.id) {
