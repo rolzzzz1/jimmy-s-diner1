@@ -260,26 +260,18 @@ function handleAddClick(foodItemId) {
     classlistCheckoutContainer.toggle("hidden");
   }
 
-  console.log("Before adding menu array - " + menuArray);
-  console.log("Before adding order array - " + orderArray);
-
-  menuArray.forEach(function (item) {
-    console.log(item.quantity);
-  });
-
   // getting food object from data using food item id
   const targetFoodItemObj = menuArray.filter(function (foodItem) {
-    if (foodItem.id === Number(foodItemId)) {
-      if (foodItem.quantity === 0) {
-        orderArray.push(foodItem);
-      }
-      foodItem.quantity += 1;
-    }
+    // if (foodItem.id === Number(foodItemId)) {
+    //   if (foodItem.quantity === 0) {
+    //     orderArray.push(foodItem);
+    //   }
+    //   foodItem.quantity += 1;
+    // }
     return foodItem.id === Number(foodItemId);
   })[0];
 
-  console.log("After adding menu array - " + menuArray);
-  console.log("After adding order array - " + orderArray);
+  console.log(targetFoodItemObj);
 
   // orderArray.push(targetFoodItemObj);
 
