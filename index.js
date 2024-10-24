@@ -165,6 +165,7 @@ cardForm.addEventListener("submit", function (e) {
                   `;
   msg = document.getElementById("msg");
   thanksDiv.classList.toggle("hidden");
+  orderArray = [];
 });
 
 // creating order html
