@@ -260,7 +260,8 @@ function handleAddClick(foodItemId) {
     classlistCheckoutContainer.toggle("hidden");
   }
 
-  console.log("Before adding - " + orderArray);
+  console.log("Before adding menu array - " + menuArray);
+  console.log("Before adding order array - " + orderArray);
 
   // getting food object from data using food item id
   const targetFoodItemObj = menuArray.filter(function (foodItem) {
@@ -273,7 +274,8 @@ function handleAddClick(foodItemId) {
     return foodItem.id === Number(foodItemId);
   })[0];
 
-  console.log("After adding - " + orderArray);
+  console.log("After adding menu array - " + menuArray);
+  console.log("After adding order array - " + orderArray);
 
   // orderArray.push(targetFoodItemObj);
 
