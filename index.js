@@ -263,6 +263,10 @@ function handleAddClick(foodItemId) {
   console.log("Before adding menu array - " + menuArray);
   console.log("Before adding order array - " + orderArray);
 
+  menuArray.forEach(function (item) {
+    console.log(item.quantity);
+  });
+
   // getting food object from data using food item id
   const targetFoodItemObj = menuArray.filter(function (foodItem) {
     if (foodItem.id === Number(foodItemId)) {
