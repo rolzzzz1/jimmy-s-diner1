@@ -165,7 +165,6 @@ cardForm.addEventListener("submit", function (e) {
                   `;
   msg = document.getElementById("msg");
   thanksDiv.classList.toggle("hidden");
-  orderArray = [];
 });
 
 // creating order html
@@ -272,7 +271,7 @@ function handleAddClick(foodItemId) {
     return foodItem.id === Number(foodItemId);
   })[0];
 
-  console.log(targetFoodItemObj);
+  console.log("Target item - " + targetFoodItemObj);
   console.log("Order array before - " + orderArray);
 
   if (targetFoodItemObj.quantity === 0) {
