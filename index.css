@@ -269,7 +269,7 @@ form {
 
 input {
   height: 70px;
-  font-size: 20px;
+  font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 4px;
   border: 1.5px solid #757575;
@@ -282,6 +282,7 @@ label {
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #757575;
+  align-self: start;
 }
 
 .payBtn {
