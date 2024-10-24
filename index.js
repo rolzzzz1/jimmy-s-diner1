@@ -282,7 +282,7 @@ function handleAddClick(foodItemId) {
     }
   });
 
-  console.log(orderArray);
+  console.log("Order array - " + orderArray);
 
   // orderArray.push(targetFoodItemObj);
 
