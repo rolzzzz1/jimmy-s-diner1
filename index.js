@@ -278,11 +278,11 @@ function handleAddClick(foodItemId) {
   if (targetFoodItemObj.quantity === 0) {
     orderArray.push(targetFoodItemObj);
   }
-  orderArray.forEach(function (item) {
-    if (item.id === targetFoodItemObj.id) {
-      item.quantity++;
-    }
-  });
+  // orderArray.forEach(function (item) {
+  //   if (item.id === targetFoodItemObj.id) {
+  //     item.quantity++;
+  //   }
+  // });
 
   console.log("Order array after - " + orderArray);
 
