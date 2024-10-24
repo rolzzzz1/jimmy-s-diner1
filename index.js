@@ -260,7 +260,7 @@ function handleAddClick(foodItemId) {
     classlistCheckoutContainer.toggle("hidden");
   }
 
-  const targetId = 0;
+  let targetId = 0;
   // getting food object from data using food item id
   let targetFoodItemObj = menuArray.filter(function (foodItem) {
     // if (foodItem.id === Number(foodItemId)) {
