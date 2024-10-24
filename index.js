@@ -282,6 +282,8 @@ function handleAddClick(foodItemId) {
     }
   });
 
+  console.log(orderArray);
+
   // orderArray.push(targetFoodItemObj);
 
   // creating and showing order html
