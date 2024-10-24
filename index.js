@@ -271,7 +271,8 @@ function handleAddClick(foodItemId) {
     return foodItem.id === Number(foodItemId);
   })[0];
 
-  console.log("Target item - " + targetFoodItemObj);
+  console.log("Target item - ");
+  console.log(targetFoodItemObj);
   console.log("Order array before - " + orderArray);
 
   if (targetFoodItemObj.quantity === 0) {
