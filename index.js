@@ -261,7 +261,7 @@ function handleAddClick(foodItemId) {
   }
 
   // getting food object from data using food item id
-  const targetFoodItemObj = menuArray.filter(function (foodItem) {
+  let targetFoodItemObj = menuArray.filter(function (foodItem) {
     // if (foodItem.id === Number(foodItemId)) {
     //   if (foodItem.quantity === 0) {
     //     orderArray.push(foodItem);
@@ -272,6 +272,11 @@ function handleAddClick(foodItemId) {
   })[0];
 
   console.log(targetFoodItemObj);
+
+  if (targetFoodItemObj.quantity === 0) {
+    orderArray.push(targetFoodItemObj);
+  }
+  targetFoodItemObj.quantity++;
 
   // orderArray.push(targetFoodItemObj);
 
