@@ -275,8 +275,13 @@ function handleAddClick(foodItemId) {
 
   if (targetFoodItemObj.quantity === 0) {
     orderArray.push(targetFoodItemObj);
+  } else {
+    orderArray.forEach(function (item) {
+      if (item.id === targetFoodItemObj.id) {
+        item.quantity++;
+      }
+    });
   }
-  targetFoodItemObj.quantity++;
 
   // orderArray.push(targetFoodItemObj);
 
