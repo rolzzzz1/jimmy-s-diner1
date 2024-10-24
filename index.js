@@ -260,33 +260,16 @@ function handleAddClick(foodItemId) {
     classlistCheckoutContainer.toggle("hidden");
   }
 
-  let targetId = 0;
   // getting food object from data using food item id
   let targetFoodItemObj = menuArray.filter(function (foodItem) {
-    // if (foodItem.id === Number(foodItemId)) {
-    //   if (foodItem.quantity === 0) {
-    //     orderArray.push(foodItem);
-    //   }
-    //   foodItem.quantity += 1;
-    // }
+    if (foodItem.id === Number(foodItemId)) {
+      if (foodItem.quantity === 0) {
+        orderArray.push(foodItem);
+      }
+      foodItem.quantity += 1;
+    }
     return foodItem.id === Number(foodItemId);
   })[0];
-
-  console.log("Target item - ");
-  console.log(targetFoodItemObj);
-  targetId = targetFoodItemObj.id;
-  console.log("Order array before - " + orderArray);
-
-  if (targetFoodItemObj.quantity === 0) {
-    orderArray.push(targetFoodItemObj);
-  }
-  orderArray.forEach(function (item) {
-    if (item.id === targetId) {
-      item.quantity++;
-    }
-  });
-
-  console.log("Order array after - " + orderArray);
 
   // orderArray.push(targetFoodItemObj);
 
