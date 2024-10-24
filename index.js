@@ -272,6 +272,7 @@ function handleAddClick(foodItemId) {
   })[0];
 
   console.log(targetFoodItemObj);
+  console.log("Order array before - " + orderArray);
 
   if (targetFoodItemObj.quantity === 0) {
     orderArray.push(targetFoodItemObj);
@@ -282,7 +283,7 @@ function handleAddClick(foodItemId) {
     }
   });
 
-  console.log("Order array - " + orderArray);
+  console.log("Order array after - " + orderArray);
 
   // orderArray.push(targetFoodItemObj);
 
