@@ -169,6 +169,7 @@ cardForm.addEventListener("submit", function (e) {
 
 // creating order html
 function getOrderHtml() {
+  console.log(orderArray);
   let orderHtml = "";
   orderArray.forEach(function (order) {
     orderHtml += `
